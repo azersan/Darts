@@ -20229,7 +20229,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
+	        { id: 'Dartboard', className: 'container' },
 	        _react2.default.createElement(_Scoreboard2.default, null),
 	        this.state.points.map(function (point) {
 	          return _react2.default.createElement(_ScoreRow2.default, { point: point });
@@ -20292,17 +20292,17 @@
 	        { className: "row" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-xs-4 left" },
+	          { className: "col-xs-4 col-md-2 left" },
 	          "12"
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-xs-4 mid" },
+	          { className: "col-xs-4 col-md-2 mid" },
 	          "vs"
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-xs-4 right" },
+	          { className: "col-xs-4 col-md-2 right" },
 	          "98"
 	        )
 	      );
@@ -20355,17 +20355,17 @@
 	        { className: "row" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-xs-4 left" },
+	          { className: "col-xs-4 col-md-2 left" },
 	          "-"
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-xs-4 mid" },
+	          { className: "col-xs-4 col-md-2 mid" },
 	          this.props.point
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-xs-4 right" },
+	          { className: "col-xs-4 col-md-2 right" },
 	          "-"
 	        )
 	      );

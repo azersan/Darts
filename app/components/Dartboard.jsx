@@ -13,7 +13,7 @@ class Dartboard extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div id="Dartboard" className="container">
         <Scoreboard />
         {this.state.points.map(function(point) {
           return (
