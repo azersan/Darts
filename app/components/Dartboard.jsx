@@ -17,7 +17,7 @@ class Dartboard extends React.Component {
         <Scoreboard />
         {this.state.points.map(function(point) {
           return (
-            <ScoreRow point={point} />
+            <ScoreRow point={point} key={point}/>
           );
         })}
       </div>
