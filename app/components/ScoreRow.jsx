@@ -22,6 +22,7 @@ class ScoreRow extends React.Component {
       newPoints[side] = newPoints[side] + 1;
       this.setState({points: newPoints});
     } else {
+      if (!this.closedOut())
       this.props.pointStore.dispatch({
         type: 'ADD_POINTS',
         side: side,
@@ -30,6 +31,13 @@ class ScoreRow extends React.Component {
     }
 
     return null;
+  }
+
+  closedOut() {
+    if(this.state.points['left'] >= 3 && this.state.points['right'] >= 3) {
+      return true;
+    }
+    return false;
   }
 
   hitLeft() {
