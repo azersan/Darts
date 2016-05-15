@@ -12,9 +12,9 @@ class Scoreboard extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-xs-4 col-md-2 left">{this.state.leftScore}</div>
-        <div className="col-xs-4 col-md-2 mid">vs</div>
-        <div className="col-xs-4 col-md-2 right">{this.state.rightScore}</div>
+        <div className="col-xs-4 col-md-2 left rowCell">{this.state.leftScore}</div>
+        <div className="col-xs-4 col-md-2 mid rowCell">vs</div>
+        <div className="col-xs-4 col-md-2 right rowCell">{this.state.rightScore}</div>
       </div>
     );
   }

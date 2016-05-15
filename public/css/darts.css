@@ -1,16 +1,16 @@
 .left {
-    background-color: red;
+    background-color: #F35C5C;
 }
 
 .right {
-    background-color: lightblue;
+    background-color: #47AACA;
 }
 
 .mid {
     background-color: lightgrey;
 }
 
-#dartboard .row div {
+.rowCell {
   height: 50px;
   text-align: center;
   font-size: 40px;
