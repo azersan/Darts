@@ -21,6 +21,12 @@ class ScoreRow extends React.Component {
       var newPoints = this.state.points;
       newPoints[side] = newPoints[side] + 1;
       this.setState({points: newPoints});
+    } else {
+      this.props.pointStore.dispatch({
+        type: 'ADD_POINTS',
+        side: side,
+        num_points: this.props.point==='B' ? 25 : Number(this.props.point)
+      });
     }
 
     return null;
