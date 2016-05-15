@@ -34,7 +34,7 @@ class ScoreRow extends React.Component {
   }
 
   closedOut() {
-    if(this.state.points['left'] >= 3 && this.state.points['right'] >= 3) {
+    if (this.state.points['left'] >= 3 && this.state.points['right'] >= 3) {
       return true;
     }
     return false;
