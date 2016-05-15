@@ -13,9 +13,9 @@ class Scoreboard extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-xs-4 col-md-2 left rowCell">{this.props.pointStore.getState()['left']}</div>
-        <div className="col-xs-4 col-md-2 mid rowCell">vs</div>
-        <div className="col-xs-4 col-md-2 right rowCell">{this.props.pointStore.getState()['right']}</div>
+        <div className="left rowCell">{this.props.pointStore.getState()['left']}</div>
+        <div className="mid rowCell">vs</div>
+        <div className="right rowCell">{this.props.pointStore.getState()['right']}</div>
       </div>
     );
   }

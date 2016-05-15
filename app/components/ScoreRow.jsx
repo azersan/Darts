@@ -51,13 +51,13 @@ class ScoreRow extends React.Component {
   render() {
     return (
       <div className="row">
-        <button onClick={this.hitLeft} className="col-xs-4 col-md-2 left rowCell">
+        <div className="rowCell"><button onClick={this.hitLeft} className="left">
           {this.state.symbols[this.state.points['left']]}
-        </button>
-        <div className="col-xs-4 col-md-2 mid rowCell">{this.props.point}</div>
-        <button onClick={this.hitRight} className="col-xs-4 col-md-2 right rowCell">
+        </button></div>
+        <div className="mid rowCell">{this.props.point}</div>
+        <div className="rowCell"><button onClick={this.hitRight} className="right">
           {this.state.symbols[this.state.points['right']]}
-        </button>
+        </button></div>
       </div>
     );
   }

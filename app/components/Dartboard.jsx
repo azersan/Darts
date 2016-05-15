@@ -45,7 +45,7 @@ class Dartboard extends React.Component {
 
   render() {
     return (
-      <div id="Dartboard" className="container">
+      <div id="Dartboard">
         <Scoreboard pointStore={pointStore}/>
         {this.state.points.map(function(point) {
           return (
