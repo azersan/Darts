@@ -35,7 +35,7 @@ class ScoreCell extends React.Component {
 
   render() {
     return (
-        <div className="rowCell"><button onClick={this.registerHit.bind(this)} className="left">
+        <div className="rowCell"><button onClick={this.registerHit.bind(this)} className={this.props.side}>
           {this.state.symbols[this.state.points]}
         </button></div>
     );
