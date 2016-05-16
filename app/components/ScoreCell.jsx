@@ -5,43 +5,23 @@ class ScoreCell extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      points: 0,
       symbols: ["-", "/", "X", "O"]
     };
+    props.pointStore.subscribe(this.forceUpdate.bind(this));
   }
 
   registerHit() {
-    var side=this.props.side;
-    if (this.state.points < 3) {
-      this.setState({points: this.state.points + 1});
-      this.props.pointStore.dispatch({
-        type: 'REGISTER_HIT',
-        side: this.props.side,
-        point: this.props.point
-      });
-    } else {
-      if (!this.closedOut())
-        this.props.pointStore.dispatch({
-          type: 'ADD_POINTS',
-          side: side,
-          num_points: this.props.point==='B' ? 25 : Number(this.props.point)
-        });
-    }
-
-    return null;
-  }
-
-  closedOut() {
-    if (this.state.points['left'] >= 3 && this.state.points['right'] >= 3) {
-      return true;
-    }
-    return false;
+    this.props.pointStore.dispatch({
+      type: 'REGISTER_HIT',
+      side: this.props.side,
+      point: this.props.point
+    });
   }
 
   render() {
     return (
         <div className="rowCell"><button onClick={this.registerHit.bind(this)} className={this.props.side}>
-          {this.state.symbols[this.state.points]}
+          {this.state.symbols[this.props.pointStore.getState()['individiualPoints'][this.props.point][this.props.side]]}
         </button></div>
     );
   }

@@ -10,31 +10,38 @@ var initialState = {
   individiualPoints: {
     20: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     },
     19: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     },
     18: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     },
     17: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     },
     16: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     },
     15: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     },
     B: {
       left: 0,
-      right: 0
+      right: 0,
+      closedOut: false
     }
   }
 }
@@ -58,6 +65,15 @@ const registerHit = (state, action) => {
   var old = state['individiualPoints'][point][side];
   if (old < 3) {
     newState['individiualPoints'][point][side] = old + 1;
+  } else if (newState['individiualPoints'][point]['closedOut'] === false){
+    newState = addPoint(newState, {
+      type: 'ADD_POINTS',
+      side: side,
+      num_points: point==='B' ? 25 : Number(point)
+    })
+  }
+  if (newState['individiualPoints'][point]['left'] == 3 && newState['individiualPoints'][point]['right'] == 3) {
+    newState['individiualPoints'][point]['closedOut'] = true;
   }
   return newState;
 }
