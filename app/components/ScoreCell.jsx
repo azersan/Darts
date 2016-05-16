@@ -14,13 +14,18 @@ class ScoreCell extends React.Component {
     var side=this.props.side;
     if (this.state.points < 3) {
       this.setState({points: this.state.points + 1});
+      this.props.pointStore.dispatch({
+        type: 'REGISTER_HIT',
+        side: this.props.side,
+        point: this.props.point
+      });
     } else {
       if (!this.closedOut())
-      this.props.pointStore.dispatch({
-        type: 'ADD_POINTS',
-        side: side,
-        num_points: this.props.point==='B' ? 25 : Number(this.props.point)
-      });
+        this.props.pointStore.dispatch({
+          type: 'ADD_POINTS',
+          side: side,
+          num_points: this.props.point==='B' ? 25 : Number(this.props.point)
+        });
     }
 
     return null;
