@@ -21,8 +21,6 @@ html, body {
   margin: 0px;
   padding: 0px;
   width: 100vw;
-  max-width: 500px;
-  max-height: 200px;
   height: 12.5vh;
 }
 
@@ -30,7 +28,7 @@ html, body {
   height: 100%;
   width: 33%;
   text-align: center;
-  font-size: 60px;
+  font-size: 150px;
   display:inline-block;
   border: 0px;
   padding: 0px;
@@ -41,5 +39,5 @@ html, body {
 .rowCell button {
   height: 100%;
   width: 100%;
-  font-size: 60px;
+  font-size: 150px;
 }
