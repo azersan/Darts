@@ -1,4 +1,5 @@
-h2. Darts App
+Darts App
+=========
 
 My experiments with React and Redux.
 
